@@ -2,12 +2,15 @@
 /**
  * 
  */
-class main  
+class main extends controllers
 {
 	
 	function __construct()
 	{
-		echo "<p>soy el controlador main</p>";
+	//con la clase parent hereda las funcionalidades del controlador padre
+		parent::__construct();
+		//busca la vista bajo el metodo render y le indica que debe renderizar
+		$this->views->render('main/index');	
 	}
 }
  ?>
