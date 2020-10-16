@@ -13,22 +13,24 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php //echo constant('url');?>main">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Usuarios
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="<?php echo constant('url');?>main/read">Ver Usuarios</a>
+        <a class="dropdown-item" href="#">Nuevo Usuarios</a>
+      </div>
+    </li>
+
     </ul>
   </div>
 </nav>	
 <div class="container">
-	<h1>te damos la bienvenida al sisema crud</h1>
+	<h1>te damos la bienvenida al sistema crud</h1>
+  
 </div>
 
 </body>
