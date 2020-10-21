@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Principal</title>
+	<title>Error 404</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 	<?php require 'views/menu.php'; ?>
 <div class="container">
-	<h1>te damos la bienvenida al sistema crud</h1>
+	<h1>Error 404</h1>
+  <h2>El recurso solicitado no existe ó no tienes permiso para acceder a el.</h2>
   
 </div>
 <?php require 'views/footer.php'; ?>

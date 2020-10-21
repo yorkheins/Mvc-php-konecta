@@ -1,36 +1,31 @@
-<?php  ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro de Usuarios</title>
+	<title>Cliente <?php echo $this->show_user["id"];?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<?php require 'views/menu.php'; ?> 
+ <?php require 'views/menu.php'; ?>	 
 <div class="container">
-	<h1>Formulario de registro de Usuarios</h1> 
-  <form action="http://localhost:8002/main/new" method="post" class="was-validated">
-  	<div class="form-group">
-    <label for="uname">ID:</label>
-    <input type="text" class="form-control" name="id" value="<?php echo $this->show_user["nombre"];?>" placeholder="Ingrese el ID" required>
-  </div>
+	<h1>Actualización de usuario ID #<?php echo $this->show_user["id"];?></h1> 
+  <form action="http://localhost:8002/main/edit/<?php echo $this->show_user["id"];?>" method="post" class="was-validated">
   <div class="form-group">
     <label for="uname">Nombre:</label>
     <input type="text" class="form-control" value="<?php echo $this->show_user["nombre"];?>" placeholder="Enter username" name="nombre" required>
   </div>
   <div class="form-group">
     <label for="uname">Apellido:</label>
-    <input type="text" class="form-control" value="<?php echo $this->show_user["apellido"];?>" placeholder="Ingrese el Nombre" name="apellido" required>
+    <input type="text" class="form-control" value="<?php echo $this->show_user["apellido"];?>" placeholder="Enter username" name="apellido" required>
   </div>
   <div class="form-group">
     <label for="uname">Correo:</label>
-    <input type="email" class="form-control" value="<?php echo $this->show_user["correo"];?>" placeholder="Ingrese el Correo" name="correo" required>
+    <input type="text" class="form-control" value="<?php echo $this->show_user["correo"];?>" placeholder="Enter username" name="correo" required>
   </div>
   <div class="form-group">
     <label for="uname">Teléfono:</label>
-    <input type="text" class="form-control" value="<?php echo $this->show_user["telefono"];?>" placeholder="Ingrese el Teléfono" name="telefono" required>
+    <input type="text" class="form-control" value="<?php echo $this->show_user["telefono"];?>" placeholder="Enter username" name="telefono" required>
   </div>
-  <button type="submit" class="btn btn-primary">Guardar</button>
+   <button type="submit" class="btn btn-primary">Actualizar</button>
 </form>
 </div>
 <?php require 'views/footer.php'; ?>

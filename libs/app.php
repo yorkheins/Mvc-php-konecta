@@ -22,22 +22,42 @@
 				$controller->render();
 				return false;	
 			}
-
+			// # número de parametros en la url
+			$numerop = sizeof($url); 
+			
 			//Segun la logica la $url[1] carga el controlador que solicita el usuario por url
 			$archivoControllers = 'controllers/'.$url[1].'.php';
 //validamos si existe el controlador, si existe lo carga, sino carga el controlador de error
 			if (file_exists($archivoControllers)) {
 				require_once $archivoControllers;
-			    $controller = new $url[1];
-			    $controller->loadModel($url[1]);
-			    $controller->render();
-			    if (isset($url[2])) {
-			    	$controller->{$url[2]}();
-			    }
+				//si el parametro por url tiene 3 valores sifnifica que viene con parametros a inyectar a un metodo
+				if ($numerop > 3) {
+						$controller = new $url[1];
+						$controller->loadModel($url[1]);
+					    $controller->{$url[2]}($url[3]);
+				}else{
+								if (isset($url[2])) {
+									$controller = new $url[1];
+									$controller->loadModel($url[1]);
+					    			$controller->{$url[2]}($url[3]);
+									//1echo $controller;
+							    	//$controller->{$url[2]}();
+
+							    	//$controller->render();	
+							    }else{
+
+								$controller = new $url[1];
+							    $controller->loadModel($url[1]);
+							    $controller->render();
+							    }
+						}
+
+			    
 			}else{
 				require_once 'controllers/errores.php';
 	
 				$controller = new errores();
+				$controller->render();
 
 			}
 			
