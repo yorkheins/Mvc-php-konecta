@@ -1,5 +1,7 @@
-<!-- Footer -->
-<footer class="page-footer font-small pt-4" style="background-color: #C5C0BF;">
+<br>
+<br><!-- Footer -->
+<footer class="page-footer font-small pt-4" style="background-color: #C5C0BF;
+  ">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
@@ -12,12 +14,6 @@
 
         <!-- Content -->
         <h5 class="text-uppercase">Crud Xpectrum</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
       </div>
       <!-- Grid column -->
@@ -30,22 +26,7 @@
       <div class="col-md-5 mb-md-0 mb-3">
 
         <!-- Links -->
-        <h5 class="text-uppercase">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
+        
 
       </div>
       <!-- Grid column -->

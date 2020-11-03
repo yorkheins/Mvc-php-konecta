@@ -1,3 +1,7 @@
+<?php 
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +10,24 @@
 </head>
 <body>
 	<?php require 'views/menu.php'; ?>
-<div class="container">
-	<h1>te damos la bienvenida al sistema crud</h1>
-  
+	<div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenidos al Sistema de control de Clientes</h1>
+  <p class="lead">A través de nuestra página, podrá conocer y administrar todas las configuraciones correspondientes a este sistema de control de clientes, todo debidamente validado por su token de seguridad.</p>
+  <hr class="my-4">
+  <p>Seleccione una de las Opciones que tenemos para usted:</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="http://localhost:8002/users/read_modal" role="button">Ver Usuarios</a>
+    <!--<a class="btn btn-success btn-lg" href="http://crud.local.com:8002/main/solicitarToken" role="button">Generar token</a>-->
+
+<!-- Modal para ver usuarios --> 
+<!-- fin del Modal para ver usuarios -->
+<!-- fin del Modal para ver usuarios -->
+  </p>
 </div>
-<?php require 'views/footer.php'; ?>
+</div>
+
+<?php require 'views/footer.php';?>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

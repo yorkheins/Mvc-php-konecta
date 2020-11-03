@@ -8,14 +8,20 @@
  <?php require 'views/menu.php'; ?>	 
 <div class="container">
 	<h1>Actualización de usuario ID #<?php echo $this->show_user["id"];?></h1> 
-  <form action="http://localhost:8002/main/edit/<?php echo $this->show_user["id"];?>" method="post" class="was-validated">
+  <?php if(!empty($this->mensaje)){
+    echo "<div class='alert alert-danger' role='alert'>
+  <h4 class='alert-heading'>¡Campos vacios!</h4>
+  <p>Parece que estas tratando de ingresar un valor vacio, debes llenar todos los campos.</p>
+</div>";
+  } ?>
+  <form action="http://localhost:8002/users/edit/<?php echo $this->show_user["id"];?>" method="post" class="was-validated">
   <div class="form-group">
     <label for="uname">Nombre:</label>
-    <input type="text" class="form-control" value="<?php echo $this->show_user["nombre"];?>" placeholder="Enter username" name="nombre" required>
+    <input type="text" class="form-control" value="<?php echo $this->show_user["nombre"];?>" placeholder="Enter username" name="nombre">
   </div>
   <div class="form-group">
     <label for="uname">Apellido:</label>
-    <input type="text" class="form-control" value="<?php echo $this->show_user["apellido"];?>" placeholder="Enter username" name="apellido" required>
+    <input type="text" class="form-control" value="<?php echo $this->show_user["apellido"];?>" placeholder="Enter username" name="apellido">
   </div>
   <div class="form-group">
     <label for="uname">Correo:</label>
