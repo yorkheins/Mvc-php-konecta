@@ -55,6 +55,7 @@ $no_valido = array('campo_user' => $campo_user_vacio,'campo_pass' => $campo_pass
 		}else{
 			if ($login['password'] == $pass) {
 				$token = $this->model->token();
+
 				session_start();
 				$_SESSION['datos'] = $login['full_name'];
 				$_SESSION['login'] = "true";

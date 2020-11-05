@@ -7,18 +7,16 @@ class usersModel
 { 
 
 	function read(){
-
-			$url = "http://localhost:8001/users";
+			$url = "http://api.local.com:8001/customers";
 			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, [
-				"X_TOKEN:".$_SESSION['token']
-			]);
+//curl_setopt($ch, CURLOPT_HTTPHEADER, ["X_TOKEN:".$_SESSION['token']]);
+ curl_setopt($ch, CURLOPT_HTTPHEADER,array('TOKEN: '.$_SESSION['token']));
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 			$ret = curl_exec($ch);
 			$json = json_decode($ret,true);
 			return $json;
-		
+		 $ret;
 }
 
 
@@ -26,10 +24,10 @@ class usersModel
 function show($id){
 	//session_start();
 	//url donde esta la api
-			  $url = "http://127.0.0.1:8001/users/".$id;
+			  $url = "http://api.local.com:8001/customers/".$id;
 			  //se procede a hacer el consumo de la api con la funcion curl
 		      $client = curl_init ( $url ) ;
-curl_setopt($client, CURLOPT_HTTPHEADER, ["X_TOKEN:".$_SESSION['token']]);
+curl_setopt($client, CURLOPT_HTTPHEADER, ["TOKEN:".$_SESSION['token']]);
 			  curl_setopt ( $client , CURLOPT_RETURNTRANSFER , true ) ;
 			  // la variable $response guarda el json que trae de la api
 			  $response = curl_exec($client);
@@ -45,10 +43,10 @@ curl_setopt($client, CURLOPT_HTTPHEADER, ["X_TOKEN:".$_SESSION['token']]);
  		$ch = curl_init();
  
  // definimos la URL a la que hacemos la petición
- curl_setopt($ch, CURLOPT_URL,"http://localhost:8001/users/");
+ curl_setopt($ch, CURLOPT_URL,"http://127.0.0.1:8001/customers/");
  //token
  curl_setopt($ch, CURLOPT_HTTPHEADER, [
-			"X_TOKEN:".$_SESSION['token']
+			"TOKEN:".$_SESSION['token']
 		]);
  // indicamos el tipo de petición: POST
  curl_setopt($ch, CURLOPT_POST, TRUE);
@@ -68,7 +66,7 @@ curl_setopt($client, CURLOPT_HTTPHEADER, ["X_TOKEN:".$_SESSION['token']]);
 	function update($json,$id){
 
 // //La URL a la que queremos enviar una solicitud PUT.
- $url = "http://localhost:8001/users/".$id;
+ $url = "http://api.local.com:8001/customers/".$id;
  $ch = curl_init();
  $envio = $json; // --- Puede ser un xml, un json, etc.
  curl_setopt($ch, CURLOPT_URL,$url);
@@ -80,7 +78,7 @@ curl_setopt($client, CURLOPT_HTTPHEADER, ["X_TOKEN:".$_SESSION['token']]);
 
 // // --- Cabecera incluyendo la longitud de los datos de envio.
 
- curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json', 'Content-Length: '.strlen($envio), 'X_TOKEN:'.$_SESSION['token']));
+ curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json', 'Content-Length: '.strlen($envio), 'TOKEN:'.$_SESSION['token']));
 
 // // --- Petición PUT.
 
@@ -105,19 +103,19 @@ return true;
 	}
 
 	function delete($id){
-$url = 'http://localhost:8001/users/'.$id;
+$url = 'http://127.0.0.1:8001/customers/'.$id;
 
 $conexion = curl_init();
 
 
 curl_setopt($conexion, CURLOPT_HTTPHEADER, [
-			"X_TOKEN:".$_SESSION['token']
+			"TOKEN:".$_SESSION['token']
 		]);
 curl_setopt($conexion, CURLOPT_URL,$url);
 
 // --- Cabecera
 
-curl_setopt($conexion, CURLOPT_HTTPHEADER,array('Content-Type: application/json','X_TOKEN:'.$_SESSION['token']));
+curl_setopt($conexion, CURLOPT_HTTPHEADER,array('Content-Type: application/json','TOKEN:'.$_SESSION['token']));
 
 // --- Petición DELETE.
 
@@ -140,12 +138,12 @@ return true;
 
 
 	function validarInsert($id){
-		$url = "http://127.0.0.1:8001/users/".$id;
+		$url = "http://127.0.0.1:8001/customers/".$id;
 			  //se procede a hacer el consumo de la api con la funcion curl
 		      $client = curl_init ( $url ) ;
 			  curl_setopt ( $client , CURLOPT_RETURNTRANSFER , true ) ;
 			  curl_setopt($client, CURLOPT_HTTPHEADER, [
-			"X_TOKEN:".$_SESSION['token']
+			"TOKEN:".$_SESSION['token']
 		]);
 			  // la variable $response guarda el json que trae de la api
 			  $response = curl_exec($client);

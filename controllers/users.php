@@ -53,7 +53,8 @@ else
 
 		 //$id = $_POS['id'];
 		 $this->views->wos = [];
-		 $wos = $this->model->read();		
+		 $wos = $this->model->read();
+
 		 $this->views->wos = $wos;
 	     $this->views->render('users/view');
 	 }

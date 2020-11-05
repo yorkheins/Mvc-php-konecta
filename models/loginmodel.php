@@ -22,7 +22,7 @@ class loginModel
 		$url = "http://localhost:8003/login";
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, [
-			"X_USER:".$user
+			"USER:".$user
 		]);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -36,7 +36,7 @@ class loginModel
 		$url = "http://localhost:8003/logout";
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, [
-			"X_USER:".$token
+			"USER:".$token
 		]);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
