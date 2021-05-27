@@ -39,8 +39,7 @@
                     </div>
                     <div class=" col-xs-12 col-sm-2  col-md-6">
                         <label for="stock">Stock</label>
-                        <input type="number" class="form-control" name="stock"
-                            placeholder="Ingrese el Nombre de la Bicicleta">
+                        <input type="number" class="form-control" name="stock" placeholder="Ingrese Cantidad de Stock">
                     </div>
                     <br>
                 </div>

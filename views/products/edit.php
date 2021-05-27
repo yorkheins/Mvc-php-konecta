@@ -46,7 +46,7 @@
                     <div class=" col-xs-12 col-sm-2  col-md-6">
                         <label for="stock">Stock</label>
                         <input type="number" class="form-control" name="stock"
-                            value="<?php echo $this->products->stock; ?>" placeholder="Digita Stock">
+                            value="<?php echo $this->products->stock; ?>" placeholder="Ingresa Cantidad de Stock">
                     </div>
                     <br>
                 </div>
